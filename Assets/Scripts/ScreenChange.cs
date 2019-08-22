@@ -1,18 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScreenChange : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public CanvasGroup canvasGroup;
+
+    public void CanvasEaseOut()
     {
-        
+       canvasGroup.alpha = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
