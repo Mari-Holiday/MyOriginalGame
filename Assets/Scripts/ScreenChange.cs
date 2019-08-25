@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+
+/*
+　Class for whole screen changes (almost for UI)
+ */
 
 public class ScreenChange : MonoBehaviour
 {
@@ -9,7 +14,13 @@ public class ScreenChange : MonoBehaviour
 
     public void CanvasEaseOut()
     {
-       canvasGroup.alpha = 0;
+        //Dissipate the canvas slowly.
+        DOTween.To(
+            () => canvasGroup.alpha,
+            num => canvasGroup.alpha = num,
+            0,
+            1.0f
+        ).SetEase(Ease.InSine);
     }
 
 }
